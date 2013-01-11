@@ -1,0 +1,9 @@
+This project provides resources for create mobile Qt applications. It may be
+useful to create prototypes of mobile applications that run on very small
+devices like the iPod nano to evaluate it regarding aspects of Human-Computer
+Interaction.
+
+It has originally been created in 2011 for the lecture Human Computer
+Interaction: Designing Interactive Systems at Hasso Plattner Institute,
+Potsdam, Germany held by Patrick Baudisch as starting point for a class
+assignment.
