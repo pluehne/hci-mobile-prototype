@@ -14,7 +14,7 @@ namespace ipn
 		m_color = Qt::black;
 		m_lineHeight = 1.0;
 
-		setAttribute(Qt::WA_TransparentForMouseEvents);
+        setAttribute(Qt::WA_TransparentForMouseEvents);
 	}
 
 	void TextWidget::paintEvent(QPaintEvent*)
@@ -29,7 +29,9 @@ namespace ipn
 			if (m_fontStyle == STYLE_BOLD)
 				weight = 75;
 
-			painter.setFont(QFont("Ubuntu", m_fontSize * ipn::helpers::fontSizeFactor, weight));
+            QFont font = QFont("Ubuntu", -1, weight);
+            font.setPixelSize(m_fontSize * PIXEL_TO_POINT);
+            painter.setFont(font);
 
 			painter.setOpacity(1.0);
 			painter.setPen(m_color);

@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#define PIXEL_TO_POINT 1.4
+
 namespace ipn
 {
 
