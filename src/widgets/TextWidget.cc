@@ -14,7 +14,7 @@ namespace ipn
 		m_color = Qt::black;
 		m_lineHeight = 1.0;
 
-		setAttribute(Qt::WA_TransparentForMouseEvents);
+        setAttribute(Qt::WA_TransparentForMouseEvents);
 	}
 
 	void TextWidget::paintEvent(QPaintEvent*)
