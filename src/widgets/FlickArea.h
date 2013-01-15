@@ -18,6 +18,9 @@ namespace ipn
 
 		public slots:
 			void forwardMouseEvent(QMouseEvent *event, bool simulateMouseRelease = false);
+			void scrollTo(const int childrenIndex);
+			void scrollTo(const QWidget* children);
+			void scrollTo(const QPoint pos);
 
 		signals:
 			void moved();

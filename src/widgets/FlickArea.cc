@@ -66,6 +66,24 @@ namespace ipn
 		QApplication::sendEvent(m_currentChild, &childEvent);
 	}
 
+	void FlickArea::scrollTo(const int childrenIndex) {
+		scrollTo(qobject_cast<QWidget*>(children().value(childrenIndex + 1)));
+	}
+
+	void FlickArea::scrollTo(const QWidget *child) {
+		if (!child || child->parent() != this)
+			return;
+		scrollTo(child->pos() - childrenRect().topLeft());
+	}
+
+	void FlickArea::scrollTo(const QPoint pos) {
+		if ((pos.x() + width() > childrenRect().width()) || (pos.y() + height() > childrenRect().height()))
+			return;
+		m_scrollOffset = - childrenRect().topLeft() - pos;
+		if (m_scrollOffset != QPoint(0, 0))
+			emit moved();
+	}
+
 	void FlickArea::mousePressEvent(QMouseEvent *event)
 	{
 		m_mouseMovedSinceMousePress = false;
